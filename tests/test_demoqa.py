@@ -5,16 +5,16 @@ import os
 def test_registration_form():
     browser.open("/automation-practice-form")
 
-    # Заполнение поелй Name, Last Name, Email, Gender
+    # Заполнение поелй Name, Last Name, Email, Gender, Mobile
 
     browser.element("#firstName").type("Sergei")
     browser.element("#lastName").type("Melnikov")
     browser.element("#userEmail").type("Sergei@Melnikov.com")
     browser.element('[for="gender-radio-1"]').click()
+    browser.element("#userNumber").type("4815162342")
 
     # Выбор даты рождения в календаре
 
-    browser.element("#userNumber").type("4815162342")
     browser.element("#dateOfBirthInput").click()
     browser.element(".react-datepicker__month-select").element(
         'option[value="8"]'
